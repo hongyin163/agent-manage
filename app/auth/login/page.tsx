@@ -31,7 +31,7 @@ export default function Component() {
   }, [session, callbackUrl]);
 
   if (loading) {
-    return <div>Loading</div>;
+    return null;
   }
 
   if (session) {
