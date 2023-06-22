@@ -3,8 +3,7 @@ import React from "react";
 export default function google({ height = 28, width = 28 }) {
   return (
     <svg
-      t="1687404362117"
-      class="icon"
+      className="icon"
       viewBox="0 0 1024 1024"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
