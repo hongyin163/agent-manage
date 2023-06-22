@@ -33,9 +33,12 @@ import {
 import { useSession, signOut } from "next-auth/react";
 import { PersonIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
+import SignInDialog from "@/components/sign-in-dialog";
+import { useState } from "react";
 
 export default function DropdownMenuDemo() {
   const { data: session, status } = useSession();
+  const [open, setOpen] = useState(false);
   const loading = status === "loading";
   const authed = status === "authenticated";
   const unauthed = status == "unauthenticated";
@@ -48,7 +51,15 @@ export default function DropdownMenuDemo() {
   if (unauthed) {
     return (
       <div className=" text-right h-10 leading-10">
-        <Link href={"/auth/login"}>Sign in</Link>
+        {/* <Link href={"/auth/login"}>Sign in</Link> */}
+        <Button type="button" variant="outline" onClick={() => setOpen(true)}>
+          Sign in
+        </Button>
+        <SignInDialog
+          closeable={true}
+          open={open}
+          onOpenChange={() => setOpen(false)}
+        />
       </div>
     );
   }

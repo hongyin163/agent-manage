@@ -10,7 +10,7 @@ export default withAuth(function middleware(req) {
   }
 }, {
   pages: {
-    signIn: "/auth/login",
+    // signIn: "/auth/login",
     // signOut: '/auth/signout',
     // error: '/auth/error', // Error code passed in query string as ?error=
     // verifyRequest: '/auth/verify-request', // (used for check email message)
@@ -25,5 +25,5 @@ export default withAuth(function middleware(req) {
 })
 // See "Matching Paths" below to learn more
 export const config = {
-  matcher: "/agent/:path*",
+  matcher: [],
 };

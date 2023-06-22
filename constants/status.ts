@@ -1,0 +1,1 @@
+export const STATUS = ["developing", "testing", "approving", "online"];

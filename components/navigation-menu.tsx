@@ -1,7 +1,6 @@
-"use client";
-
 import * as React from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 import { cn } from "@/lib/utils";
 import {
@@ -52,7 +51,15 @@ const components: { title: string; href: string; description: string }[] = [
   },
 ];
 
-export default function NavigationMenuDemo() {
+export default function Navigation() {
+  const router = useRouter();
+
+  const goTo = (href: string) => {
+    return () => {
+      console.log("=====");
+      router.push(href);
+    };
+  };
   return (
     <NavigationMenu className=" justify-start">
       <NavigationMenuList>
@@ -60,7 +67,11 @@ export default function NavigationMenuDemo() {
           <NavigationMenuTrigger>Agent Management</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-              <ListItem href="/agent/list" title="Agent List">
+              <ListItem
+                className=" cursor-pointer"
+                onClick={goTo("/agent/list")}
+                title="Agent List"
+              >
                 Re-usable components built using Radix UI and Tailwind CSS.
               </ListItem>
               <ListItem href="/agent/add" title="Agent Add">
