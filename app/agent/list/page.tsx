@@ -53,24 +53,22 @@ function List(props: any) {
   };
   return (
     <div className="flex flex-col">
-      {openAdd && (
-        <AgentForm
-          title="Create Agent"
-          value={undefined}
-          open={openAdd}
-          onSubmit={onAddSubmit}
-          onOpenChange={onAddOpenChange}
-        />
-      )}
-      {openEdit && (
-        <AgentFormEdit
-          title="Edit Agent"
-          value={editValue}
-          open={openEdit}
-          onSubmit={onEditSubmit}
-          onOpenChange={onEditOpenChange}
-        />
-      )}
+      <AgentForm
+        title="Create Agent"
+        value={undefined}
+        open={openAdd}
+        onSubmit={onAddSubmit}
+        onOpenChange={onAddOpenChange}
+      />
+
+      <AgentFormEdit
+        title="Edit Agent"
+        value={editValue}
+        open={openEdit}
+        onSubmit={onEditSubmit}
+        onOpenChange={onEditOpenChange}
+      />
+
       <div className=" text-right px-5">
         <Button variant={"outline"} onClick={onCreate}>
           Create Agent
