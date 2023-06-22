@@ -1,17 +1,13 @@
 "use client";
 
-import { redirect } from "next/navigation";
-import { Button } from "@/components/ui/button";
-import Loading from "@/components/loading";
-import { useSession, signIn, signOut } from "next-auth/react";
-import { useEffect, useState } from "react";
+import { useSession } from "next-auth/react";
+import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useSearchParams } from "next/navigation";
-
+import SignInDialog from "@/components/sign-in-dialog";
 export default function Component() {
   const route = useRouter();
   const searchParams = useSearchParams();
-  // const [loading, setLoading] = useState(false);
   const callbackUrl = searchParams?.get("callbackUrl");
   const { data: session, status } = useSession();
 
@@ -38,20 +34,8 @@ export default function Component() {
     return null;
   }
   return (
-    <div className="flex flex-col justify-center  items-center ">
-      <div className="flex flex-col w-80 text-center">
-        <h2 className=" text-2xl m-10">Sign in</h2>
-        <Button
-          disabled={loading}
-          className="mb-5"
-          onClick={() => signIn("google")}
-        >
-          Sign in by Google
-        </Button>
-        <Button disabled={loading} onClick={() => signIn("github")}>
-          Sign in by Github
-        </Button>
-      </div>
+    <div>
+      <SignInDialog closeable={false} open={true} />;
     </div>
   );
 }

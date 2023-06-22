@@ -3,14 +3,10 @@ import { NextRequest } from "next/server";
 import { withAuth } from "next-auth/middleware"
 
 export default withAuth(function middleware(req) {
-  console.log(req)
-  if (req.nextUrl.pathname === '/auth/login/' && req.nextauth.token) {
-    return NextResponse.redirect(new URL('/home', req.url))
 
-  }
 }, {
   pages: {
-    // signIn: "/auth/login",
+    signIn: "/auth/login",
     // signOut: '/auth/signout',
     // error: '/auth/error', // Error code passed in query string as ?error=
     // verifyRequest: '/auth/verify-request', // (used for check email message)
@@ -25,5 +21,5 @@ export default withAuth(function middleware(req) {
 })
 // See "Matching Paths" below to learn more
 export const config = {
-  matcher: [],
+  matcher: "/agent/:path*",
 };

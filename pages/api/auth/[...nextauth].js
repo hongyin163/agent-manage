@@ -55,7 +55,7 @@ const options = {
     }),
   ],
   pages: {
-    // signIn: "/auth/login",
+    signIn: "/auth/login",
     // signOut: "/auth/signout",
     // error: "/auth/error",
     // verifyRequest: "/auth/verify-request",
