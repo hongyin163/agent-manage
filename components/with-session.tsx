@@ -1,6 +1,6 @@
 "use client";
 
-import { useSession, signIn, signOut } from "next-auth/react";
+import { useSession } from "next-auth/react";
 import React from "react";
 import SignInDialog from "./sign-in-dialog";
 export default function withSession(Component: React.FunctionComponent) {

@@ -1,10 +1,9 @@
 "use client";
 import React, { useState } from "react";
-import withSession from "@/components/with-session";
 import AgentList from "@/components/agent-list";
 import { Button } from "@/components/ui/button";
 import useAgentList from "@/hooks/useAgentList";
-import AgentForm from "@/components/agent-form";
+import AgentForm from "@/components/agent-form-add";
 import AgentFormEdit from "@/components/agent-form-edit";
 import { useToast } from "@/components/ui/use-toast";
 

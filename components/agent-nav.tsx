@@ -1,11 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { useRouter, usePathname } from "next/navigation";
 import withSession from "@/components/with-session";
 
-import Logo from "./logo";
-import { Exo } from "next/font/google";
 const menus = [
   {
     key: "list",

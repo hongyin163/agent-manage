@@ -4,16 +4,13 @@ import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
-  DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialog";
 import { Close } from "@radix-ui/react-dialog";
 import { X } from "lucide-react";
 
-import { useSession, signIn, signOut } from "next-auth/react";
+import { useSession, signIn } from "next-auth/react";
 import GoogleIcon from "./icons/google";
 import GitHubIcon from "./icons/github";
 import SignInForm from "./sign-in-form";
